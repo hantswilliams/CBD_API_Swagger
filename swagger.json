@@ -1,17 +1,20 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-12-25T04:34:32Z",
+    "version": "2019-12-25T21:11:03Z",
     "title": "CBD API V2"
   },
   "host": "tmzio752la.execute-api.us-east-1.amazonaws.com",
-  "basePath": "/CBD_V2",
+  "basePath": "/CBD_PROD_01",
   "schemes": [
     "https"
   ],
   "paths": {
     "/": {
       "post": {
+        "consumes": [
+          "application/json"
+        ],
         "produces": [
           "application/json"
         ],
@@ -22,32 +25,14 @@
             "description": "Within the header, be sure to include a KEY of 'x-api-key' with a Value 'YOUR API SECRET KEY'",
             "required": true,
             "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "200 response",
-            "schema": {
-              "$ref": "#/definitions/Empty"
-            }
-          }
-        },
-        "security": [
+          },
           {
-            "api_key": []
-          }
-        ]
-      },
-      "put": {
-        "produces": [
-          "application/json"
-        ],
-        "parameters": [
-          {
-            "name": "x-api-key",
-            "in": "header",
+            "in": "body",
+            "name": "Details",
             "required": true,
-            "type": "string"
+            "schema": {
+              "$ref": "#/definitions/Details"
+            }
           }
         ],
         "responses": {
@@ -77,6 +62,43 @@
     "Empty": {
       "type": "object",
       "title": "Empty Schema"
+    },
+    "Details": {
+      "type": "object",
+      "required": [
+        "input"
+      ],
+      "properties": {
+        "input": {
+          "type": "object",
+          "properties": {
+            "categories": {
+              "type": "object",
+              "properties": {
+                "q_curiosity": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "q_biology": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "categories"
+          ]
+        }
+      }
     }
   }
 }
