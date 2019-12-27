@@ -30,6 +30,7 @@
           {
             "in": "body",
             "name": "Details",
+            "description": "Hants - insert some text here to describe the Request Body of the POST method",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Details"
