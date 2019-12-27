@@ -12,6 +12,7 @@
   "paths": {
     "/": {
       "post": {
+        "description": "Simple Example Text Will Go Here.",
         "consumes": [
           "application/json"
         ],
@@ -22,6 +23,7 @@
           {
             "name": "x-api-key",
             "in": "header",
+            "description": "Within the header, be sure to include a KEY of 'x-api-key' with a Value 'YOUR API SECRET KEY'",
             "required": true,
             "type": "string"
           },
