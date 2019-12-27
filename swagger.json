@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-12-25T21:11:03Z",
+    "version": "2019-12-27T03:17:20Z",
     "title": "CBD API V2"
   },
   "host": "tmzio752la.execute-api.us-east-1.amazonaws.com",
-  "basePath": "/CBD_PROD_01",
+  "basePath": "/CBD_PROD4",
   "schemes": [
     "https"
   ],
@@ -22,7 +22,6 @@
           {
             "name": "x-api-key",
             "in": "header",
-            "description": "Within the header, be sure to include a KEY of 'x-api-key' with a Value 'YOUR API SECRET KEY'",
             "required": true,
             "type": "string"
           },
@@ -40,22 +39,42 @@
             "description": "200 response",
             "schema": {
               "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              }
             }
           }
-        },
-        "security": [
-          {
-            "api_key": []
+        }
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
           }
-        ]
+        }
       }
-    }
-  },
-  "securityDefinitions": {
-    "api_key": {
-      "type": "apiKey",
-      "name": "x-api-key",
-      "in": "header"
     }
   },
   "definitions": {
