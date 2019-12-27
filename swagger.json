@@ -12,7 +12,7 @@
   "paths": {
     "/": {
       "post": {
-        "description": "This is our generic, single API endpoint {PUT} for the FlowerDecision Demo",
+        "description": "This is our generic API endpoint for the FlowerDecision Demo. Everything for this demo goes through this 'POST' request.",
         "consumes": [
           "application/json"
         ],
@@ -30,7 +30,6 @@
           {
             "in": "body",
             "name": "Details",
-            "description": "Hants - insert some text here to describe the Request Body of the POST method",
             "required": true,
             "schema": {
               "$ref": "#/definitions/Details"
@@ -55,6 +54,33 @@
             "api_key": []
           }
         ]
+      },
+      "options": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            },
+            "headers": {
+              "Access-Control-Allow-Origin": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Methods": {
+                "type": "string"
+              },
+              "Access-Control-Allow-Headers": {
+                "type": "string"
+              }
+            }
+          }
+        }
       }
     }
   },
@@ -66,6 +92,10 @@
     }
   },
   "definitions": {
+    "Empty": {
+      "type": "object",
+      "title": "Empty Schema"
+    },
     "Details": {
       "type": "object",
       "required": [
