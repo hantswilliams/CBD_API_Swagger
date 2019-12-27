@@ -12,7 +12,7 @@
   "paths": {
     "/": {
       "post": {
-        "description": "Simple Example Text Will Go Here.",
+        "description": "This is our generic, single API endpoint {PUT} for the FlowerDecision Demo",
         "consumes": [
           "application/json"
         ],

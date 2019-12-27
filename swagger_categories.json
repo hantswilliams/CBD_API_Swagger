@@ -1,0 +1,12 @@
+{
+    "response categories for swagger": "5.0",
+    "q_age": {
+      "response 1 selection": "age_young",
+      "response 2 selection": "age_old"
+    },
+    "q_curiosity": {
+        "response 1 selection": "curiosity_informed",
+        "response 2 selection": "curiosity_curious",
+        "response 3 selection": "curiosity_skeptical"
+      }
+}
