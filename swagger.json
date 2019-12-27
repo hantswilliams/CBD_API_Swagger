@@ -1,11 +1,11 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-12-27T03:17:20Z",
+    "version": "2019-12-27T03:27:42Z",
     "title": "CBD API V2"
   },
   "host": "tmzio752la.execute-api.us-east-1.amazonaws.com",
-  "basePath": "/CBD_PROD4",
+  "basePath": "/CBD_PROD5",
   "schemes": [
     "https"
   ],
@@ -46,7 +46,12 @@
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
       },
       "options": {
         "consumes": [
@@ -75,6 +80,13 @@
           }
         }
       }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "x-api-key",
+      "in": "header"
     }
   },
   "definitions": {
